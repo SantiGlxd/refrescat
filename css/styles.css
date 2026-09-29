@@ -13,19 +13,33 @@ body{font-family:Montserrat,system-ui,Arial,sans-serif;margin:0;background:var(-
 h1{font-size:42px;margin:6px 0}
 .slogan{color:var(--accent-dark);font-weight:700;margin:0}
 .main-nav{display:flex;gap:12px;justify-content:center;padding:14px 0}
+.main-nav{display:flex;gap:12px;justify-content:center;padding:14px 0;flex-wrap:wrap}
 .main-nav a{color:var(--accent-dark);text-decoration:none;padding:8px 12px;border-radius:8px}
 .main-nav a:hover{background:#fff3d9}
 .welcome{max-width:760px;margin:14px auto 0;color:var(--muted)}
 .card{background:white;border-radius:12px;padding:18px;margin:18px 0;box-shadow:0 8px 24px rgba(16,24,40,.06)}
 .gallery{display:flex;gap:12px;flex-wrap:wrap}
-.gallery img{width:calc(33% - 8px);border-radius:8px;object-fit:cover;height:180px}
+.gallery img{width:calc(50% - 8px);border-radius:8px;object-fit:cover;height:160px}
 .contact .icon{width:40px;vertical-align:middle;margin-right:10px}
 .insta{display:inline-flex;align-items:center;gap:10px;color:var(--accent-dark);text-decoration:none}
 .insta:hover{text-decoration:underline}
 .footer{text-align:center;padding:20px;color:var(--muted);font-size:14px}
 
+@media (max-width:900px){
+  h1{font-size:36px}
+  .gallery img{width:calc(50% - 8px)}
+}
+
 @media (max-width:700px){
-  h1{font-size:32px}
+  h1{font-size:28px}
   .gallery img{width:100%}
   .header-inner{flex-direction:column}
+  .logo{width:120px}
+  .welcome{padding:0 14px}
+  .main-nav{display:none}
+  .mobile-nav-toggle{display:inline-block;position:fixed;right:18px;top:18px;background:var(--accent);color:white;padding:10px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:60}
+  .mobile-nav{position:fixed;right:14px;top:64px;background:white;border-radius:12px;padding:8px;box-shadow:0 12px 36px rgba(0,0,0,.2);display:none;flex-direction:column;gap:6px;z-index:60}
+  .mobile-nav a{padding:10px 14px;display:block;color:var(--accent-dark)}
 }
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
